@@ -3,6 +3,7 @@ package programacionFuncional02;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -29,8 +30,13 @@ public class Main {
 		
 		
 		// Listar todos los productos 
+		String productsWithC = shoppingCart.stream()
+				.filter(product -> product.name.startsWith("C"))
+				.sorted((product1, product2) -> product1.name.compareToIgnoreCase(product2.name))
+				.map(product -> product.name)
+				.collect(Collectors.joining(",", "Productos que empiezan por C", "."));
 		
-		
+		System.out.println(productsWithC);
 	}
 
 }
