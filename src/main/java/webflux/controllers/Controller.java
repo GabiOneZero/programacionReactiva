@@ -1,4 +1,4 @@
-package prueba.webFlux;
+package webflux.controllers;
 
 import java.time.Duration;
 
@@ -21,5 +21,7 @@ public class Controller {
 		
 		return flux;
 	}
+	
+	
 
 }
